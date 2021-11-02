@@ -1,0 +1,7 @@
+#ignore virtualenv
+/venv/
+
+#ignore vim cache files
+*.un~
+*.*~
+*.swp
