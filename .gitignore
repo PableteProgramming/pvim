@@ -1,6 +1,9 @@
 #ignore virtualenv
 /venv/
 
+#ignore python cache
+/__pycache__/
+
 #ignore vim cache files
 *.un~
 *.*~
