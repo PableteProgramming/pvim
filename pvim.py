@@ -1,23 +1,18 @@
 from buffer import *
 
 def pvim(scr, *args):
-    # -- Perform an action with Screen --
-    #scr.border(0)
-    #scr.addstr(5, 5, 'Hello from Curses!', curses.A_BOLD)
-    #scr.addstr(6, 5, 'Press q to close this screen', curses.A_NORMAL)
     curses.curs_set(0)
-    buff= Buffer(scr,0,0,curses.COLS,curses.LINES)
+    height, width= scr.getmaxyx() 
+    #width= curses.COLS
+    buff= Buffer(scr,1,1,width-1,height-1)
     buff.showCursor(True)
+    buff.print("width: "+str(width)+"; height: "+str(height))
     buff.print("Hi")
-    buff.cursor.x=10
     buff.print("Hellooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo")
-    #buff.cursor.x=buff.cursor.x+10
-    #buff.print("Lul")
     buff.refresh()
     
     while True:
         # stay in this loop till the user presses 'q'
-        #scr.addstr(0,0,"lul",curses.A_BOLD)
         refresh= False
         ch = scr.getch()
         if ch == ord("w"):

@@ -55,7 +55,7 @@ class Buffer:
         for y in range(len(self.buff)):
             for x in range(len(self.buff[y])):
                 try:
-                    self.instance.addstr(y,x,self.buff[y][x],curses.A_NORMAL)
+                    self.instance.addstr(self.y+y,self.x+x,self.buff[y][x],curses.A_NORMAL)
                 except curses.error:
                     pass
 
